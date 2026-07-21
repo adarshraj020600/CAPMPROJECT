@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "dependencies": {
     "@cap-js/hana": "^2.8.0",
-    "@sap/cds": "^9"
+    "@sap/cds": "^9",
+    "@sap/xssec": "^4"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^2.4",
+    "@sap/cds-dk": "^9",
     "@sap/dev-cap-tools": "^1.31.0",
     "cds-plugin-ui5": "^0.17.0"
   },
@@ -20,5 +22,15 @@
   ],
   "sapux": [
     "app/salesapp"
-  ]
+  ],
+  "cds": {
+    "server" :{
+      "index" : true
+    },  
+    "requires": {
+      "[production]": {
+        "auth": "xsuaa"
+      }
+    }
+  }
 }
