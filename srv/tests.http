@@ -1,0 +1,125 @@
+###
+http://localhost:4004/odata/v4/sales-order-app
+
+###
+http://localhost:4004/odata/v4/sales-order-app/AddServices
+
+###
+http://localhost:4004/odata/v4/sales-order-app/AddServices?$top=10
+
+###
+http://localhost:4004/odata/v4/sales-order-app/AddServices?$top=10&$skip=20
+
+###
+http://localhost:4004/odata/v4/sales-order-app/AddServices/$count
+
+###
+http://localhost:4004/odata/v4/sales-order-app/AddServices?$select=CITY,COUNTY
+
+
+###
+http://localhost:4004/odata/v4/sales-order-app/AddServices?filter=COUNTY eq 'US'&$select=CITY,COUNTY
+
+
+###
+ http://localhost:4004/odata/v4/sales-order-app/AddServices
+### Create a new record in the AddService entity
+POST http://localhost:4004/odata/v4/sales-order-app/AddServices
+Content-Type: application/json
+
+    {
+      "ADDRESS_TYPE": "1",
+      "BUILDING": "29",
+      "CITY": "Frankfurt",
+      "COUNTY": "DE",
+      "LATITUDE": "49.331816",
+      "LONGITUDE": "101.736955",
+      "NODE_KEY": "74867AD200E41EDBA5D8B06885664000",
+      "POSTAL": "85377",
+      "STREET": "Zeppelinstrasse",
+      "VAL_END": null,
+      "VAL_START": "2001-01-20"
+    }
+
+### Modify an existing record in the AddService entity
+PUT http://localhost:4004/odata/v4/sales-order-app/AddServices/74867AD200E41EDBA5D8B06885664000
+Content-Type: application/json
+ 
+{
+    "POSTAL": "99999"
+}
+ 
+ 
+### Delete an existing record in the AddService entity
+DELETE http://localhost:4004/odata/v4/sales-order-app/AddServices/74867AD200E41EDBA5D8B06885664000
+
+### Insert Employee Details
+POST http://localhost:4004/odata/v4/sales-order-app/EmpService
+Content-Type: application/json
+ 
+{
+      "ID": "02BD2137-0890-1EEA-A6C2-BB55C19788CC",
+      "ACCOUNTNUMBER": "777888999",
+      "BANKID": "510000111",
+      "BANKNAME": "My Bank of Baroda",
+      "CURRENCY_code": "INR",
+      "EMAIL": "kl.rahul@itelo.info",
+      "GENDER": "M",
+      "LANGUAGE_code": "EN",
+      "LOGINNAME": "KLRAHUL",
+      "EMPLOYEEID" : 12001,
+      "NAMEFIRST": "K L",
+      "NAMEINITIAL": "ab",
+      "NAMELAST": "Rahul",
+      "NAMEMIDDLE": "cd",
+      "PHONE": "+1 999 374 524",
+      "SALARY": "155500.00"
+}
+
+### Update Employee Details
+PUT http://localhost:4004/odata/v4/sales-order-app/EmpService/02BD2137-0890-1EEA-A6C2-BB55C19788CC
+Content-Type: application/json
+ 
+{
+ 
+      "CURRENCY_code": "INR",
+      "SALARY": "5000.00"
+}
+###
+ http://localhost:4004/odata/v4/sales-order-app/gethighestSalary()
+
+### Read Employee Details
+http://localhost:4004/odata/v4/sales-order-app/EmpService
+
+### Insert Employee Details
+POST http://localhost:4004/odata/v4/sales-order-app/createEmployee
+Content-Type: application/json
+ 
+{
+      "ID": "02BD2137-0890-1EEA-BD91-CC55C19711",
+      "ACCOUNTNUMBER": "777118022",
+      "BANKID": "510000191",
+      "BANKNAME": "My Bank of Maharastra",
+      "EMAIL": "ab.d@itelo.info",
+      "GENDER": "M",
+      "LANGUAGE": "EN",
+      "LOGINNAME": "MUKESH",
+      "EMPLOYEEID" : 12003,
+      "NAMEFIRST": "KUMAR",
+      "NAMEINITIAL": null,
+      "NAMELAST": "Mukesh",
+      "NAMEMIDDLE": null,
+      "PHONE": "+1 888 374 524",
+      "SALARY": "95000.00"
+}
+
+###
+GET http://localhost:4004/odata/v4/sales-order-app/SOService
+ 
+ 
+###
+POST http://localhost:4004/odata/v4/sales-order-app/SOService/74867AD200E41EDBA5D8B06885B04052/discountPrice
+Content-Type: application/json
+
+{}
+
